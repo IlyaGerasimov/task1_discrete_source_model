@@ -1,6 +1,6 @@
 import argparse
 import json
-from random import random
+from random import uniform
 import config
 import multiprocessing
 import sys
@@ -126,8 +126,8 @@ def get_json(file):
 
 
 def get_source(data, i):
-    switch_result = random()
-    model_result = random()
+    switch_result = uniform(0.0, 1.0)
+    model_result = uniform(0.0, 1.0)
     switch = data['source'][i % len(data['switches'])]
     switch_part = float(0)
     for key, value in data['switches'][switch].items():
